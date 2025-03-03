@@ -1,0 +1,136 @@
+/* frontend\src\styles\Options.css */
+.options-section {
+  background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);
+  padding: 5rem 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.options-section .options-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.options-section .options-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.options-section .options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.options-section .option-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.options-section .option-card:hover {
+  transform: scale(1.05);
+}
+
+.options-section .option-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.options-section .option-description {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.options-section .option-features {
+  list-style: none;
+  padding: 0;
+}
+
+.options-section .option-features li {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.options-section .option-button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: #3498db;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.options-section .option-button:hover {
+  background: #2980b9;
+}
+
+.options-section .wave-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.options-section .wave-container img {
+  width: 100%;
+  display: block;
+  clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.options-section .safety-section {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.options-section .safety-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e74c3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.options-section .safety-description {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.options-section .safety-features {
+  list-style: none;
+  padding: 0;
+}
+
+.options-section .safety-features li {
+  font-size: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.options-section .diamond-shape {
+  width: 100%;
+  height: 100px;
+  background: white;
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}

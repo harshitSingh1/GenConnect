@@ -1,0 +1,133 @@
+.companionship-container {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #1b0172, #007BFF);
+    color: white;
+    min-height: 100vh;
+}
+
+.companionship-container .hero {
+    padding: 50px 20px;
+    background: url('https://img.freepik.com/free-photo/futuristic-metaverse-empty-room-product-display-presentation-abstract-technology-scifi-with-neon-light-3d-background_56104-2314.jpg') no-repeat center center/cover;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.companionship-container .hero h1 {
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.companionship-container .hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.companionship-container .info-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.companionship-container .rewards-container {
+    margin-top: 40px;
+}
+
+.companionship-container .reward-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.companionship-container .reward-card {
+    width: 250px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.companionship-container .reward-card:hover {
+    transform: scale(1.05);
+}
+
+.companionship-container .reward-card h3 {
+    font-size: 1.4rem;
+}
+
+.companionship-container .reward-card span {
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.companionship-container .progress-section {
+    margin-top: 50px;
+}
+
+.companionship-container .progress-bar {
+    width: 80%;
+    max-width: 500px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.companionship-container .progress-fill {
+    height: 100%;
+    background: linear-gradient(45deg, #FFD700, #FFAA00);
+    transition: width 0.5s ease-in-out;
+}
+
+.companionship-container .start-session-btn {
+    margin-top: 30px;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #007BFF, #00C6FF);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.companionship-container .start-session-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .companionship-container .reward-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .companionship-container .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .companionship-container .hero p {
+        font-size: 1rem;
+    }
+}
