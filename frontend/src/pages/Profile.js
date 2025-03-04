@@ -22,7 +22,7 @@ const Profile = () => {
       if (!token) return;
   
       try {
-        const response = await fetch("http://localhost:8080/auth/profile", {
+        const response = await fetch("https://genconnect-server.vercel.app/auth/profile", {
           headers: { Authorization: token },
         });
         const data = await response.json();
@@ -57,7 +57,7 @@ const Profile = () => {
   const handleSave = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:8080/auth/update-profile", {
+      const response = await fetch("https://genconnect-server.vercel.app/auth/update-profile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -59,7 +59,7 @@ const Matching = () => {
 
   const fetchUsers = useCallback(async () => {
     try {
-      const res = await axios.get("http://localhost:8080/auth/users");
+      const res = await axios.get("https://genconnect-server.vercel.app/auth/users");
       const filteredUsers = loggedInUserId
         ? res.data.users.filter((user) => user._id !== loggedInUserId)
         : res.data.users;
@@ -82,7 +82,7 @@ const Matching = () => {
     }
 
     try {
-      const res = await axios.get("http://localhost:8080/auth/profile", {
+      const res = await axios.get("https://genconnect-server.vercel.app/auth/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLoggedInUserId(res.data.user._id);
@@ -93,7 +93,7 @@ const Matching = () => {
 
   const applyFilters = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/auth/users", {
+      const res = await axios.get("https://genconnect-server.vercel.app/auth/users", {
         params: {
           profileType: filters.profileType?.value === "all" ? null : filters.profileType?.value,
           skills: filters.skills?.value,

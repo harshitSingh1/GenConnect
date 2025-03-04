@@ -13,7 +13,7 @@ function Navbar() {
     const token = localStorage.getItem("token");
 
     if (token) {
-      fetch("http://localhost:8080/auth/profile", {
+      fetch("https://genconnect-server.vercel.app/auth/profile", {
         headers: { Authorization: token },
       })
         .then((response) => response.json())

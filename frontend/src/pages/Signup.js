@@ -31,7 +31,7 @@ function Signup() {
     }
     console.log(profileType);
     try {
-      const url = "http://localhost:8080/auth/signup";
+      const url = "https://genconnect-server.vercel.app/auth/signup";
       const response = await fetch(url, {
         method: "POST",
         headers: {
