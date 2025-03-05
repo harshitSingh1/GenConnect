@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter');
 const ProductRouter = require('./Routes/ProductRouter');
+const serverless = require("serverless-http");
 
 require('dotenv').config();
 require('./Models/db');
@@ -26,6 +27,6 @@ app.use(bodyParser.json());
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
-});
+module.exports = app;
+module.exports.handler = serverless(app);
+
