@@ -9,8 +9,23 @@ require('./Models/db');
 
 const app = express();
 
-// Middleware
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+// Allow frontend origins
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://genconnect.vercel.app"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS policy error: Origin not allowed"));
+    }
+  },
+  credentials: true
+}));
+
 app.options("*", cors());
 
 app.use(express.json({ limit: "10mb" }));
@@ -30,5 +45,4 @@ app.get('/ping', (req, res) => {
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 
-// Export the app (for Vercel)
 module.exports = app;
