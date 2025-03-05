@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter');
 const ProductRouter = require('./Routes/ProductRouter');
-const serverless = require("serverless-http");
 
 require('dotenv').config();
 require('./Models/db');
@@ -28,5 +27,4 @@ app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 
 module.exports = app;
-module.exports.handler = serverless(app);
 
