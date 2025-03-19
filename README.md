@@ -76,10 +76,20 @@ GenConnect is a web application that connects teenagers with senior citizens for
 
 ## 🌐 Installation
 ### **To run this project locally:**
-1. Navigate to the backend folder:
+1. Download folder:
 ```sh
-git clone https://github.com/YourUsername/FarmingNow.git
-cd FarmingNow
+git clone https://github.com/YourUsername/GenConnec.git
+cd GenConnect
+```
+2. Setup Backend:
+```
+cd backend
+npm install
+npm start
+```
+3. Setup Frontend:
+```
+cd frontend
 npm install
 npm start
 ```
