@@ -76,6 +76,7 @@ GenConnect is a web application that connects teenagers with senior citizens for
 
 ## 🌐 Installation
 ### **To run this project locally:**
+
 1. Download folder:
 ```sh
 git clone https://github.com/YourUsername/GenConnec.git
