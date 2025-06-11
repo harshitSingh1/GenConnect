@@ -2,6 +2,9 @@ Website: https://genconnect.vercel.app/
 
 Explanation video: https://youtu.be/YQ3nNx9nmK4
 
+![GenConnect](https://github.com/user-attachments/assets/320b41d9-d9ca-4d60-8ce8-869eabddbbb0)
+
+
 # GenConnect – Bridging Generations
 
 GenConnect is a web application that connects teenagers with senior citizens for **mentorship, skill-sharing, and companionship**. Teens can seek guidance in areas like **academics, cooking, gardening, career advice, or life skills**, while seniors can share their **wisdom, experiences, and enjoy meaningful interactions**.
