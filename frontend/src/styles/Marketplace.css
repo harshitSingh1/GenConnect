@@ -1,0 +1,290 @@
+.marketplace-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #2d006d, #5d02de);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.marketplace-container .main-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00bfff;
+  padding-top: 20px;
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #007acc;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.marketplace-container .subheading {
+  font-size: 1.2rem;
+  color: #d1e8ff;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.marketplace-container .search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 10px 15px;
+  width: 90%;
+  max-width: 500px;
+  transition: all 0.3s ease-in-out;
+}
+
+.marketplace-container .search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: white;
+  padding: 8px;
+}
+
+.marketplace-container .search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.673);
+}
+
+.marketplace-container .search-bar button {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #00bfff;
+  transition: transform 0.2s;
+}
+
+.marketplace-container .search-bar button:hover {
+  transform: scale(1.1);
+}
+
+.marketplace-container .listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 20px;
+  padding: 20px;
+  max-height: calc(2 * 220px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.marketplace-container .listings-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.marketplace-container .skill-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.marketplace-container .skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(0, 191, 255, 0.7);
+}
+
+.marketplace-container .add-listing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 191, 255, 0.2);
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.marketplace-container .add-listing-card:hover {
+  background: rgba(0, 191, 255, 0.3);
+}
+
+.marketplace-container .add-icon {
+  font-size: 3rem;
+  color: white;
+}
+
+.marketplace-container .add-listing-card p {
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.marketplace-container .skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.marketplace-container .profile-info {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #00bfff;
+}
+
+.marketplace-container .description {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.marketplace-container .request-button {
+  background: linear-gradient(90deg, #00bfff, #007acc);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.marketplace-container .request-button:hover {
+  background: linear-gradient(90deg, #007acc, #005f99);
+  transform: scale(1.05);
+}
+
+.marketplace-container .form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marketplace-container .add-listing-form {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  text-align: center;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+.marketplace-container .add-listing-form ::placeholder{
+  color: rgba(255, 255, 255, 0.311);
+}
+
+.marketplace-container .form-group {
+  margin-bottom: 15px;
+}
+
+.marketplace-container .form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #00bfff;
+}
+
+.marketplace-container .form-group input,
+.marketplace-container .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+.marketplace-container .form-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  appearance: none;
+  cursor: pointer;
+}
+
+.marketplace-container .form-group select option {
+  background: #2d006d;
+  color: white;
+}
+
+
+.marketplace-container .form-group textarea {
+  resize: none;
+  height: 80px;
+}
+
+.marketplace-container .submit-button,
+.marketplace-container .cancel-button {
+  background: linear-gradient(90deg, #00bfff, #007acc);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.marketplace-container .submit-button:hover {
+  background: linear-gradient(90deg, #007acc, #005f99);
+}
+
+.marketplace-container .cancel-button {
+  background: rgba(255, 0, 0, 0.8);
+}
+
+.marketplace-container .cancel-button:hover {
+  background: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .marketplace-container .main-heading {
+    font-size: 2rem;
+  }
+
+  .marketplace-container .listings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
