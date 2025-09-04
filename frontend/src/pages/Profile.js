@@ -49,6 +49,12 @@ function Profile({ setIsAuthenticated }) {
       });
 
       if (!response.ok) {
+        // If unauthorized, clear storage and redirect to login
+        if (response.status === 401) {
+          clearAuthData();
+          navigate("/login");
+          return;
+        }
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
@@ -81,7 +87,7 @@ function Profile({ setIsAuthenticated }) {
     }
   };
 
-  const handleLogout = () => {
+  const clearAuthData = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userEmail");
     localStorage.removeItem("userName");
@@ -90,9 +96,16 @@ function Profile({ setIsAuthenticated }) {
     if (setIsAuthenticated) {
       setIsAuthenticated(false);
     }
-    
-    navigate("/login");
+  };
+
+  const handleLogout = () => {
+    clearAuthData();
     handleSuccess("Logged out successfully!");
+    
+    // Use a small timeout to ensure the toast message is visible
+    setTimeout(() => {
+      navigate("/login", { replace: true });
+    }, 100);
   };
 
   const handleInputChange = (e) => {
@@ -121,6 +134,12 @@ function Profile({ setIsAuthenticated }) {
 
     try {
       const token = localStorage.getItem("token");
+      if (!token) {
+        handleError("Please log in again");
+        handleLogout();
+        return;
+      }
+
       const url = `${getApiUrl()}/auth/update-profile`;
 
       const updateData = {
@@ -133,8 +152,6 @@ function Profile({ setIsAuthenticated }) {
         sessionPreferences: formData.sessionPreferences
       };
 
-      console.log("Sending update data:", updateData);
-
       const response = await fetch(url, {
         method: "PUT",
         headers: {
@@ -144,8 +161,14 @@ function Profile({ setIsAuthenticated }) {
         body: JSON.stringify(updateData)
       });
 
+      // Check if unauthorized
+      if (response.status === 401) {
+        handleError("Session expired. Please log in again.");
+        handleLogout();
+        return;
+      }
+
       const result = await response.json();
-      console.log("Update response:", result);
 
       if (result.success) {
         handleSuccess("Profile updated successfully!");

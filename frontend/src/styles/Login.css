@@ -1,166 +1,253 @@
-/* frontend\src\styles\Login.css */
+/* Login.css - Highly specific selectors to prevent conflicts */
 
+.login-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100vh !important;
+  position: relative !important;
+  margin: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+  color: #fff !important;
+  overflow: hidden !important;
+}
+
+.login-container .background-animation {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+}
+
+.login-container .shape {
+  position: absolute !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+  animation: float 10s infinite ease-in-out !important;
+}
+
+.login-container .shape-1 {
+  width: 150px !important;
+  height: 150px !important;
+  top: 20% !important;
+  left: 10% !important;
+  animation-duration: 8s !important;
+}
+
+.login-container .shape-2 {
+  width: 200px !important;
+  height: 200px !important;
+  top: 50% !important;
+  left: 70% !important;
+  animation-duration: 12s !important;
+}
+
+.login-container .shape-3 {
+  width: 100px !important;
+  height: 100px !important;
+  top: 80% !important;
+  left: 30% !important;
+  animation-duration: 10s !important;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) !important;
+  }
+  50% {
+    transform: translateY(-20px) !important;
+  }
+}
+
+/* Glassmorphic Login Card */
+.login-container .login-card {
+  background: rgba(255, 255, 255, 0.95) !important; /* Changed to lighter background */
+  backdrop-filter: blur(10px) !important;
+  border-radius: 20px !important;
+  padding: 2.5rem 2rem !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  text-align: center !important;
+  z-index: 2 !important;
+  position: relative !important;
+}
+
+.login-container .login-header h1 {
+  font-size: 2rem !important;
+  margin-bottom: 0.5rem !important;
+  color: #333 !important; /* Changed to dark color */
+}
+
+.login-container .login-header p {
+  font-size: 0.9rem !important;
+  color: #666 !important; /* Changed to dark color */
+  margin-bottom: 2.5rem !important;
+}
+
+/* Input Fields - Completely isolated styling */
+.login-container .input-group {
+  position: relative !important;
+  margin-bottom: 1.8rem !important;
+}
+
+.login-container .input-group label {
+  display: block !important;
+  text-align: left !important;
+  margin-bottom: 0.8rem !important;
+  font-size: 0.95rem !important;
+  color: #333 !important; /* Changed to dark color */
+  font-weight: 500 !important;
+  padding-left: 0.2rem !important;
+}
+
+.login-container .input-wrapper {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.9) !important; /* Light background */
+  border: 1px solid #ddd !important; /* Darker border */
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.login-container .input-wrapper:focus-within {
+  border-color: #00b4d8 !important;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.5) !important;
+  background: rgba(255, 255, 255, 1) !important;
+}
+
+.login-container .input-wrapper input {
+  width: 100% !important;
+  padding: 0.9rem 1rem 0.9rem 3rem !important;
+  border: none !important;
+  background: transparent !important;
+  color: #333 !important; /* Dark text color */
+  font-size: 1rem !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.login-container .input-wrapper input::placeholder {
+  color: #888 !important; /* Dark placeholder */
+  font-size: 0.9rem !important;
+}
+
+/* Icons positioned outside the input field - BLACK COLOR */
+.login-container .input-icon {
+  position: absolute !important;
+  left: 1rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #333 !important; /* BLACK color */
+  width: 20px !important;
+  height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* Professional SVG Icons - BLACK color */
+.login-container .input-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  fill: #333 !important; /* BLACK color */
+}
+
+/* Login Button */
+.login-container .login-button {
+  width: 100% !important;
+  padding: 1rem !important;
+  border: none !important;
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, #00b4d8, #0077b6) !important;
+  color: #fff !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  margin-top: 0.8rem !important;
+}
+
+.login-container .login-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0077b6, #00b4d8) !important;
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.7) !important;
+  transform: translateY(-2px) !important;
+}
+
+.login-container .login-button:disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Footer Links */
+.login-container .login-footer {
+  margin-top: 2rem !important;
+  font-size: 0.9rem !important;
+  color: #666 !important; /* Dark color */
+}
+
+.login-container .login-footer p {
+  margin: 0.5rem 0 !important;
+  color: #666 !important; /* Dark color */
+}
+
+.login-container .login-footer a {
+  color: #0077b6 !important; /* Blue color */
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+}
+
+.login-container .login-footer a:hover {
+  color: #00b4d8 !important; /* Lighter blue */
+  text-decoration: underline !important;
+}
+
+.login-container .demo-credentials {
+  font-size: 0.8rem !important;
+  color: #666 !important; /* Dark color */
+  margin-top: 1.2rem !important;
+  padding: 0.8rem !important;
+  background: rgba(0, 0, 0, 0.05) !important; /* Light background */
+  border-radius: 8px !important;
+  font-style: italic !important;
+  line-height: 1.4 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
   .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #fff;
-    overflow: hidden;
+    padding: 1rem !important;
   }
   
-  /* Background Animation */
-  .background-animation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+  .login-container .login-card {
+    padding: 2rem 1.5rem !important;
+    margin: 1rem !important;
   }
   
-  .shape {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    animation: float 10s infinite ease-in-out;
+  .login-container .login-header h1 {
+    font-size: 1.75rem !important;
   }
   
-  .shape-1 {
-    width: 150px;
-    height: 150px;
-    top: 20%;
-    left: 10%;
-    animation-duration: 8s;
+  .login-container .input-wrapper input {
+    padding: 0.8rem 0.8rem 0.8rem 2.8rem !important;
   }
   
-  .shape-2 {
-    width: 200px;
-    height: 200px;
-    top: 50%;
-    left: 70%;
-    animation-duration: 12s;
+  .login-container .input-icon {
+    left: 0.8rem !important;
   }
   
-  .shape-3 {
-    width: 100px;
-    height: 100px;
-    top: 80%;
-    left: 30%;
-    animation-duration: 10s;
+  .login-container .input-icon svg {
+    width: 18px !important;
+    height: 18px !important;
   }
-  
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-  
-  /* Glassmorphic Login Card */
-  .login-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 2rem;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-  }
-  
-  .login-card h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .login-card p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 2rem;
-  }
-  
-  /* Input Fields */
-  .input-group {
-    position: relative;
-    margin-bottom: 1.5rem;
-  }
-  
-  .input-group label {
-    display: block;
-    text-align: left;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 0.8rem;
-    padding-left: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-  .input-group input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
-  }
-  
-  .input-group input:focus {
-    outline: none;
-    border-color: #00b4d8;
-    box-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
-  }
-  
-  .input-icon {
-    position: absolute;
-    left: 10px;
-    top: 70%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.2rem;
-  }
-  
-  /* Login Button */
-  .login-button {
-    width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #00b4d8, #0077b6);
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .login-button:hover {
-    background: linear-gradient(135deg, #0077b6, #00b4d8);
-    box-shadow: 0 0 15px rgba(0, 180, 216, 0.7);
-  }
-  
-  /* Links */
-  .links {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-  }
-  
-  .links a {
-    color: #00b4d8;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
+}

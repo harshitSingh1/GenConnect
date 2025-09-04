@@ -398,7 +398,7 @@ const Matching = () => {
   if (loading) {
     return (
       <div className="matching-container">
-        <div className="loading-spinner">Loading...</div>
+        <div className="loading-spinner">...</div>
       </div>
     );
   }
